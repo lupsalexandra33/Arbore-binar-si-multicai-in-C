@@ -1,9 +1,7 @@
-Lupsa Alexandra Cristina - 312CC
+## Tema 2 - Structuri de Date si Algoritmi
 
-Tema 2 - Structuri de Date si Algoritmi
-
-Mod de implementare:
-	Pentru a crea arborele binar construit cu Min-Heap am creat trei structuri.
+### Mod de implementare:
+Pentru a crea arborele binar construit cu Min-Heap am creat trei structuri.
 O structura pentru arborele binar (din curs), unde avem un camp pentru
 frecventa, unul pentru nume (alocat dinamic), unul pentru fiul stang si drept,
 si un ultim camp pentru legatura cu arborele multicai, legatura de care avem
@@ -14,7 +12,7 @@ campurile de frecventa, nume (alocat dinamic), numarul de copii, un vector de
 copii pentru fiecare nod in parte si o legatura cu arborele binar realizata prin
 parametrul parinte_binar.
 
-	Am citit cele trei argumente in main, acestea fiind numarul cerintei,
+Am citit cele trei argumente in main, acestea fiind numarul cerintei,
 fisierul de intrare, respectiv cel de iesire. Am citit numarul de sateliti iar
 apoi am initializat heap-ul in functia PQInit (din curs) in care am inceput de
 la size 0 si am atribuit maxHeapSize cu numarul de sateliti. Apoi am declarat
@@ -42,8 +40,8 @@ Dupa ce am creat Min-Heap-ul, acesta va avea un singur nod, si anume radacina,
 pe care o extragem in variabila radacina. Vom avea nevoie de ea pentru toate
 cerintele ce vor urma.
 
-CERINTA 1:
-	In cadrul acestui task apelam functia parcurgeNivel (din curs), care
+### CERINTA 1:
+In cadrul acestui task apelam functia parcurgeNivel (din curs), care
 afiseaza pe nivele arborele cu structura de Min-Heap realizat anterior. In
 cadrul acestei functii am initializat 3 variabile, elemente_nivel,
 elemente_verif si noduri_next. Elemente_nivel verifica cate noduri se afla pe
@@ -61,8 +59,8 @@ sa trecem pe alt rand. Elemente_nivel primeste acum toti fiii nivelului care
 tocmai s-a afisat (adica noduri_next), iar la final reinitializam noduri_next si
 elemente_verif cu 0 pentru o noua iteratie.
 
-CERINTA 2:
-	In cadrul cerintei 2, ni se ofera mai multe codificari pe care noi trebuie
+### CERINTA 2:
+In cadrul cerintei 2, ni se ofera mai multe codificari pe care noi trebuie
 sa le decodificam, pentru a determina ce sateliti au fost codificati. Cu
 ajutorul variabilei contor reinitializata cu 0 inaintea if-urilor cu cerinte,
 parcurgem fiecare codificare in cadrul functiei parcurgere_codificare_c2.
@@ -75,8 +73,8 @@ are descendenti, inseamna ca am gasit unul din sateliti si il afisam.
 Reintializam t cu radacina si continam string-ul de unde am ramas pentru a gasi
 urmatorii sateliti codificati.
 
-CERINTA 3:
-	La cerinta 3, avem de codificat intr-un string de 0 si 1 niste noduri. Citim
+### CERINTA 3:
+La cerinta 3, avem de codificat intr-un string de 0 si 1 niste noduri. Citim
 cate nume avem de codificat, iar apoi intr-un while citim nume cu nume fisierul.
 Pentru fiecare nume citit, consumam \n -ul de la sfarsitul string-ului pentru a
 face string-ul sa se termine cu terminatorul de sir '\0'. Initializam pointer-ul
@@ -99,8 +97,8 @@ daca avem structura R1 urmata de o litera. Daca acest lucru se intampla,
 returnam 1 (conditia este adevarata). Daca nu, inseamna ca nu cautam nodul unde
 trebuie si functia cautaNod nu o va mai lua pe acea ramura.
 
-CERINTA 4:
-	La cerinta 4, avem de gasit parintele comun al mai multor noduri. Citim cate
+### CERINTA 4:
+La cerinta 4, avem de gasit parintele comun al mai multor noduri. Citim cate
 nume avem de codificat, intrucat pentru a gasi parintele comun m-am gandit la
 implementarea unei matrici de codificari, unde fiecare linie a matricii
 reprezinta codificarea unui satelit. Cautand astfel prefixul comun in functia
@@ -129,8 +127,8 @@ functia parcurgere_codificare_c4. In cadrul acestei functii, similar cu functie
 parcurgere_codifcare_c2, parcurgem vectorul codificarii comune a numelor de la
 radacina. La finalul string-ului afisam numele la care am ajuns.
 
-CERINTA 5:
-	La cerinta 5, am avut de calculat distanta dintre doua nume, numele putand
+### CERINTA 5:
+La cerinta 5, am avut de calculat distanta dintre doua nume, numele putand
 face parte atat din arborele binar, cat si dintr-un subarbore multicai. Astfel,
 cu ajutorul functiilor folosite si la task-urile anterioare si cu altele pe care
 le-am creat special pentru implementarea acestei cerinte, am abordat problema
@@ -157,7 +155,8 @@ copil, facem legatura intre fiecare nod din subarbore si parintele din binar,
 iar mai apoi intram in functia adaugare_copil, unde realocam dinamic memoria
 intrucat am mai adaugat un copil, adaugam copilul la finalul vectorului,
 actualizand la final numarul de fii din arbore.
-	Dupa ce am creat toti arborii multicai si i-am conectat de noduri din binar,
+
+Dupa ce am creat toti arborii multicai si i-am conectat de noduri din binar,
 am citit cele doua nume pentru care trebuie sa aflam distanta. Mai intai, am
 verificat daca ele apartin arborelui binar sau unuia multicai. Pentru fiecare
 nod, am creat variabila distanta1, respectiv distanta2, pe care le-am
@@ -173,14 +172,17 @@ gasim nodul intr-un arbore, reinitializam distanta cu 0 pentru a cauta in
 urmatorul. Daca rezultatul functiei cautanod_mtree este diferit de NULL,
 inseamna ca am gasit arborele multicai in care se afla nodul nostru, retinand
 indicele acestuia in variabila indice_arbore1/ indice_arbore2.
-	Dupa ce am determinat unde se afla cele doua nume pe care le-am primit ca
+
+Dupa ce am determinat unde se afla cele doua nume pe care le-am primit ca
 input, ramificam codul pe mai multe situatii: situatia in care ambele noduri
 apartin arborelui binar, situatia in care unul apartine arborelui binar iar
 celalalt apartine de un arbore multicai, situatia in care nodurile sunt in
 acelasi arbore multicai si situatia in care nodurile apartin unor arbori
 multicai diferiti.
-	1. Cele doua nume se afla in arborele binar:
-		Cum retinem codificarile si distante inca din cautarea nodurilor, tot ce
+
+1. <ins> Cele doua nume se afla in arborele binar: </ins>
+
+	Cum retinem codificarile si distante inca din cautarea nodurilor, tot ce
 trebuie sa facem este sa apelam functia prefix_comun pentru a determina care
 este lungimea comuna a celor doua drumuri. Daca prima pozitie a vectorului este
 terminatorul de sir, inseamna ca drumurile se intersecteaza doar in radacina =>
@@ -188,8 +190,10 @@ rezultatul este suma celor doua drumuri distanta1 + distanta2. In caz contrar,
 retinem in variabila len lungimea vectorului prefix, aceasta lungime se adauga
 atat in distanta1 cat si in distanta2 si trebuie scazuta din ambele parti =>
 rezultatul este distanta1 + distanta2 - 2 * len.
-	2. Unul apartine arborelui binar, celalat face parte dintr-unul multicai:
-		Am doua if-uri separate (binar + multicai si multicai + binar), dar ele
+
+2. <ins> Unul apartine arborelui binar, celalat face parte dintr-unul multicai: </ins>
+
+	Am doua if-uri separate (binar + multicai si multicai + binar), dar ele
 fac acelasi lucru numai ca pentru celalalat nume. Astfel, cum unul din nume se
 afla in binar => distanta1/distanta2 detine lungimea caii. Pentru celalalt nume,
 calculam distanta de la radacina la nodul binar de care este arborele multicai
@@ -202,13 +206,17 @@ comuna intre cele doua noduri apartinand ambele arborelui binar, adunam si
 distanta1/distanta2 care a fost salvata inca de cand cautam unde se afla nodul,
 la care mai adaugam 1, acesta reprezentand legatura dintre arborele binar si
 radacina celui multicai.
-	3. Ambele sunt in acelasi arbore multicai:
-		Cu ajutorul functiei cautanod_mtree determinam distanta de la nod1 ce a
+
+3. <ins> Ambele sunt in acelasi arbore multicai: </ins>
+
+	Cu ajutorul functiei cautanod_mtree determinam distanta de la nod1 ce a
 fost returnat ca pointer atunci cand am cautat unde se afla nodurile pana la
 nume2, deoarece stim ca si acesta se afla in acelasi subarbore. Variabila d2
 retine distanta pe care trebuie sa o afisam.
-	4. Daca sunt in arbori multicai diferiti:
-		Creem doua variabile TTree, nod1_bin si nod2_bin, ce reprezinta nodurile
+
+4. <ins> Daca sunt in arbori multicai diferiti: </ins>
+
+	Creem doua variabile TTree, nod1_bin si nod2_bin, ce reprezinta nodurile
 din binar de care se leaga arborii multicai de care apartin. Calculam
 codificarile cu ajutorul functiei cautaNod, salvand in variabilele d1 si d2
 distantele din arborele binar. Gasim drumul comun cu ajutorul functiei
@@ -218,6 +226,7 @@ cautarenod_mtree am calculat si distantele de la radacinile arborilor multicai
 la nodurile cautate. La final, adunam distanta din binar cu cele doua distante
 distanta 1 si distanta2 la care adaugam inca 2 pentru cele doua legaturi intre
 binar si multicai.
+
 	La final, am creat un for de la 0 la numarul de arbori binari-1 pentru a da
 free la memoria din multicai. In functia free_arbore_multicai, creem un while
 care trece prin toti copiii radacinii arborelui si recursiv sterge tot
